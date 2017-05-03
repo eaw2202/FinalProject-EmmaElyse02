@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "226696367635",
+    "firebase_url": "https://finalproject-emmaelyse-649d8.firebaseio.com",
+    "project_id": "finalproject-emmaelyse-649d8",
+    "storage_bucket": "finalproject-emmaelyse-649d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226696367635:android:f0e660f9ee1e2228",
+        "android_client_info": {
+          "package_name": "com.elysewarren.addtofirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226696367635-m43sr8mabpedik021qjv9hvedqea51se.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9hbtMVcvmZYITHNeTU2iNwMhg5JbTyUQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/underthesea"
+    android:id="@+id/activity_character_screen"
+    tools:context="com.elysewarren.addtofirebase.Characters">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose a Character"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:layout_width="180dip"
+            android:layout_height="180dip"
+            android:background="@drawable/fish"
+            android:layout_weight="1"
+            android:id="@+id/fish_pic"
+            android:onClick="openLevelScreen"
+            android:padding="16dp" />
+
+        <ImageButton
+            android:layout_width="180dip"
+            android:layout_height="180dip"
+            android:background="@drawable/dolphin"
+            android:layout_weight="1"
+            android:id="@+id/dolphin_pic"
+            android:onClick="openLevelScreen"
+            android:padding="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:layout_width="180dip"
+            android:layout_height="180dip"
+            android:background="@drawable/octupus"
+            android:layout_weight="1"
+            android:id="@+id/octupus_pic"
+            android:onClick="openLevelScreen"
+            android:padding="16dp" />
+
+        <ImageButton
+            android:layout_width="180dip"
+            android:layout_height="180dip"
+            android:background="@drawable/whale"
+            android:layout_weight="1"
+            android:id="@+id/whale_pic"
+            android:onClick="openLevelScreen"
+            android:padding="16dp" />
+
+    </LinearLayout>
+</LinearLayout>

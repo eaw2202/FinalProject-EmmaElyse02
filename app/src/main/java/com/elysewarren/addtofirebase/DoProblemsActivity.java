@@ -15,17 +15,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class DoProblemsActivity extends AppCompatActivity {
-    private TextView displayText;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference wpProblems = database.getReference("Problems");
     private ArrayList<MathProblem> mathProblemsArrayList = new ArrayList<>();
-
+    private TextView displayText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_do_problems);
-
         displayText = (TextView) findViewById(R.id.problem_text_view);
 
         wpProblems.addChildEventListener(new ChildEventListener() {
@@ -55,38 +53,12 @@ public class DoProblemsActivity extends AppCompatActivity {
 
             }
         });
-        wpProblems.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
     }
 
     private void displayMathProblems() {
         String text = "";
-        for (MathProblem mathProblems : mathProblemsArrayList)
-            text += mathProblems + "\n";
+        for (MathProblem mathProblem : mathProblemsArrayList)
+            text += mathProblem + "\n";
         displayText.setText(text);
     }
 

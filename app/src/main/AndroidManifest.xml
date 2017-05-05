@@ -19,7 +19,7 @@
         <activity android:name=".DoProblemsActivity" />
         <activity android:name=".Characters" />
         <activity android:name=".ScoreBoard" />
-        <activity android:name=".SignUp"></activity>
+        <activity android:name=".SignUp" />
     </application>
 
 </manifest>

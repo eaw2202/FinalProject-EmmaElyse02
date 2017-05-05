@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -13,12 +12,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private FirebaseAuth auth = FirebaseAuth.getInstance();
+    public FirebaseDatabase database = FirebaseDatabase.getInstance();
+    public FirebaseAuth auth = FirebaseAuth.getInstance();
     private FirebaseAuth.AuthStateListener authListener;
 
-    private EditText userName;
-    private EditText passWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        userName = (EditText) findViewById(R.id.username_fillin);
-        passWord = (EditText) findViewById(R.id.password_fillin);
     }
 
     @Override

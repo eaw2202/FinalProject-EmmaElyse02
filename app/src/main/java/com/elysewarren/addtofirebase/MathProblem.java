@@ -5,11 +5,11 @@ package com.elysewarren.addtofirebase;
  */
 
 public class MathProblem {
-    private String problem;
-    private int answer;
-    private boolean correct;
+    public String problem;
+    public int answer;
+    public boolean correct;
 
-    public MathProblem() {
+    public MathProblem(String id, String s, int i, boolean b) {
     }
 
     public MathProblem(String problem, int answer, boolean correct) {

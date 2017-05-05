@@ -56,7 +56,7 @@ public class Characters extends AppCompatActivity {
     }
 
 
-    public void openLevelScreen(View view) {
+    public void openDoProblems(View view) {
         Intent i = new Intent(this, DoProblemsActivity.class);
         startActivity(i);
     }

@@ -46,7 +46,7 @@
         android:textColor="@android:color/white"
         android:layout_weight="1"
         android:id="@+id/play_button"
-        android:onClick="openCharacterScreen" />
+        android:onClick="openCharacters" />
 
     <Button
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
         android:textColor="@android:color/white"
         android:layout_weight="1"
         android:id="@+id/sign_up"
-        android:onClick="openSignUpScreen" />
+        android:onClick="openSignUp" />
 
     <Button
         android:layout_width="match_parent"

@@ -1,7 +1,9 @@
 package com.elysewarren.addtofirebase;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -86,6 +88,11 @@ public class DoProblemsActivity extends AppCompatActivity {
         for (MathProblem mathProblems : mathProblemsArrayList)
             text += mathProblems + "\n";
         displayText.setText(text);
+    }
+
+    public void openScoreBoard(View view) {
+        Intent i = new Intent(this, ScoreBoard.class);
+        startActivity(i);
     }
 
 }

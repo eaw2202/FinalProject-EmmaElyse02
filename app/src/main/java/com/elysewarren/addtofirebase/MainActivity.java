@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -16,25 +17,15 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth = FirebaseAuth.getInstance();
     private FirebaseAuth.AuthStateListener authListener;
 
+    private EditText userName;
+    private EditText passWord;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        authListener = new FirebaseAuth.AuthStateListener()
 
-                //    // onClick
-//    public void set(View view) {
-//        mathRef.push().setValue(new MathProblem("Two fish swam up to four more fish. How many fish are all together? \n", 6, true));
-//        mathRef.push().setValue(new MathProblem("There are 5 seals. 5 more come. How many seals are there?\n", 10 , true));
-//        mathRef.push().setValue(new MathProblem("Dolphin had 10 clams. He ate 6 for lunch. How many more clams does dolphin have? \n", 4, true));
-//        mathRef.push().setValue(new MathProblem("Some fish were swimming, and then 15 joined them. Now there are 57. How many fish started out swimming? \n", 42, true));
-//        mathRef.push().setValue(new MathProblem("9-4\n", 5, true));
-//        mathRef.push().setValue(new MathProblem("5+9\n", 14 , true));
-//        mathRef.push().setValue(new MathProblem("1x2 \n", 2, true));
-//        mathRef.push().setValue(new MathProblem("2x4 \n", 8, true));
-//
-//    }
-        {
+        authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -42,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, SignUp.class));
             }
         };
-}
+
+        userName = (EditText) findViewById(R.id.username_fillin);
+        passWord = (EditText) findViewById(R.id.password_fillin);
+    }
 
     @Override
     protected void onStart() {
@@ -56,7 +50,33 @@ public class MainActivity extends AppCompatActivity {
         auth.removeAuthStateListener(authListener);
     }
 
+    public void openSignUp(View view) {
+        Intent i = new Intent(this, SignUp.class);
+        startActivity(i);
+    }
+
+    public void openCharacters(View view) {
+        Intent i = new Intent(this, Characters.class);
+        startActivity(i);
+    }
+
     public void signOut(View view) {
         auth.signOut();
     }
 }
+
+
+//    // onClick
+//    public void set(View view) {
+//        mathRef.push().setValue(new MathProblem("Two fish swam up to four more fish. How many fish are all together? \n", 6, true));
+//        mathRef.push().setValue(new MathProblem("There are 5 seals. 5 more come. How many seals are there?\n", 10 , true));
+//        mathRef.push().setValue(new MathProblem("Dolphin had 10 clams. He ate 6 for lunch. How many more clams does dolphin have? \n", 4, true));
+//        mathRef.push().setValue(new MathProblem("Some fish were swimming, and then 15 joined them. Now there are 57. How many fish started out swimming? \n", 42, true));
+//        mathRef.push().setValue(new MathProblem("9-4\n", 5, true));
+//        mathRef.push().setValue(new MathProblem("5+9\n", 14 , true));
+//        mathRef.push().setValue(new MathProblem("1x2 \n", 2, true));
+//        mathRef.push().setValue(new MathProblem("2x4 \n", 8, true));
+//
+//
+
+

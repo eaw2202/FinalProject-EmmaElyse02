@@ -30,7 +30,7 @@
             android:background="@drawable/fish"
             android:layout_weight="1"
             android:id="@+id/fish_pic"
-            android:onClick="openLevelScreen"
+            android:onClick="openDoProblems"
             android:padding="16dp" />
 
         <ImageButton
@@ -39,7 +39,7 @@
             android:background="@drawable/dolphin"
             android:layout_weight="1"
             android:id="@+id/dolphin_pic"
-            android:onClick="openLevelScreen"
+            android:onClick="openDoProblems"
             android:padding="16dp" />
     </LinearLayout>
 
@@ -54,7 +54,7 @@
             android:background="@drawable/octupus"
             android:layout_weight="1"
             android:id="@+id/octupus_pic"
-            android:onClick="openLevelScreen"
+            android:onClick="openDoProblems"
             android:padding="16dp" />
 
         <ImageButton
@@ -63,7 +63,7 @@
             android:background="@drawable/whale"
             android:layout_weight="1"
             android:id="@+id/whale_pic"
-            android:onClick="openLevelScreen"
+            android:onClick="openDoProblems"
             android:padding="16dp" />
 
     </LinearLayout>

@@ -19,4 +19,16 @@
         android:layout_weight="1"
         android:layout_gravity="center" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score Board"
+        android:id="@+id/score_board"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        android:layout_weight="1"
+        android:layout_gravity="center" />
+
 </LinearLayout>

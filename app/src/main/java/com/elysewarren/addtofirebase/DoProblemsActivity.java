@@ -11,6 +11,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.UUID;
 
+
 public class DoProblemsActivity extends AppCompatActivity {
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference wpProblems = database.getReference("Problems");
@@ -41,4 +42,3 @@ public class DoProblemsActivity extends AppCompatActivity {
     }
 
 }
-

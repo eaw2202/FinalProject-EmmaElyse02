@@ -20,6 +20,8 @@
         <activity android:name=".Characters" />
         <activity android:name=".ScoreBoard" />
         <activity android:name=".SignUp" />
+        <activity android:name=".ViewProblem" />
+        <activity android:name=".ProblemAdapter"></activity>
     </application>
 
 </manifest>

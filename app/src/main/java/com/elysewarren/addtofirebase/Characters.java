@@ -3,8 +3,10 @@ package com.elysewarren.addtofirebase;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Characters extends AppCompatActivity {
     private ImageButton fishChar;
@@ -59,5 +61,8 @@ public class Characters extends AppCompatActivity {
     public void openDoProblems(View view) {
         Intent i = new Intent(this, DoProblemsActivity.class);
         startActivity(i);
+        Toast t = Toast.makeText(this, "READY TO DIVE IN?", Toast.LENGTH_SHORT);
+        t.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+        t.show();
     }
 }

@@ -8,7 +8,7 @@ public class MathProblem {
     public String problem;
     public int answer;
     public boolean correct;
-
+    public String id;
     public MathProblem(String id, String s, int i, boolean b) {
     }
 

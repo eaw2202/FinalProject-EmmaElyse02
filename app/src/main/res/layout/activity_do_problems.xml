@@ -7,18 +7,31 @@
     android:background="@drawable/underthesea"
     tools:context="com.elysewarren.addtofirebase.DoProblemsActivity">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Problems"
+        android:text="Add a Problem"
         android:id="@+id/problem_text_view"
         android:fontFamily="cursive"
         android:textStyle="bold"
         android:textSize="40sp"
+        android:onClick="addProblem"
         android:textColor="@android:color/white"
         android:layout_weight="1"
         android:layout_gravity="center" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete a Problem"
+        android:id="@+id/problem_delete"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:onClick="removeProblem"
+        android:textColor="@android:color/white"
+        android:layout_weight="1"
+        android:layout_gravity="center" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

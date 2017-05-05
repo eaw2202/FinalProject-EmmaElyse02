@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -37,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         auth.addAuthStateListener(authListener);
+        Toast t = Toast.makeText(this, "WELCOME TO THE OCEAN!", Toast.LENGTH_SHORT);
+        t.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+        t.show();
+
     }
 
     @Override

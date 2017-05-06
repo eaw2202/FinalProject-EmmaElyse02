@@ -52,4 +52,7 @@ public class ProblemAdapter extends RecyclerView.Adapter<ProblemAdapter.ProblemH
             answer = (TextView) itemView.findViewById(R.id.answer);
         }
     }
+
+
+
 }

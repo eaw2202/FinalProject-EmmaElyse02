@@ -3,7 +3,10 @@ package com.elysewarren.addtofirebase;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -20,7 +23,7 @@ public class DoProblemsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_do_problems);
     }
 
     public void addProblem(View view) {
@@ -41,4 +44,32 @@ public class DoProblemsActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void openViewProblem(View view)
+    {
+        Intent intent = new Intent(this, ViewProblem.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.menu_item_save:
+                Toast.makeText(this, "Save Clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.menu_item_settings:
+                Toast.makeText(this, "Setting Clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

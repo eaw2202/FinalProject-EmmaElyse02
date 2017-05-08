@@ -8,8 +8,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -18,36 +22,32 @@ import java.util.UUID;
 public class DoProblemsActivity extends AppCompatActivity {
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference wpProblems = database.getReference("Problems");
-    private ArrayList<MathProblem> mathProblemsArrayList = new ArrayList<>();
+    private ArrayList<Containproblems> mathProblemsArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_do_problems);
+
+
     }
 
     public void addProblem(View view) {
         String id = UUID.randomUUID().toString();
-        MathProblem p = new MathProblem(id, "2 + 2 =", 4, true);
+        Containproblems p = new Containproblems();
         mathProblemsArrayList.add(p);
         wpProblems.child(id).setValue(p);
     }
 
     public void removeProblem(View view) {
         if (mathProblemsArrayList.size() == 0) return;
-        MathProblem p = mathProblemsArrayList.remove(0);
-        wpProblems.child(p.id).removeValue();
+        Containproblems p = mathProblemsArrayList.remove(0);
+        wpProblems.child(p.getProblem()).removeValue();
     }
 
     public void openScoreBoard(View view) {
         Intent i = new Intent(this, ScoreBoard.class);
         startActivity(i);
-    }
-
-    public void openViewProblem(View view)
-    {
-        Intent intent = new Intent(this, ViewProblem.class);
-        startActivity(intent);
     }
 
     @Override
@@ -72,4 +72,6 @@ public class DoProblemsActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 }

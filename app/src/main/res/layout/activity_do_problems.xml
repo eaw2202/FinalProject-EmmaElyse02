@@ -16,8 +16,8 @@
         android:textStyle="bold"
         android:textSize="40sp"
         android:onClick="addProblem"
-        android:background="@android:color/transparent"
         android:textColor="@android:color/white"
+        android:background="@android:color/transparent"
         android:layout_weight="1"
         android:layout_gravity="center" />
 
@@ -48,17 +48,5 @@
         android:layout_gravity="center"
         android:onClick="openScoreBoard" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Play!"
-        android:fontFamily="cursive"
-        android:textStyle="bold"
-        android:background="@android:color/transparent"
-        android:textSize="24sp"
-        android:textColor="@android:color/white"
-        android:layout_weight="1"
-        android:id="@+id/play_button"
-        android:onClick="openViewProblem" />
 
 </LinearLayout>

@@ -25,54 +25,64 @@ public class ViewProblem extends AppCompatActivity {
     ProblemAdapter problemAdapter;
     List<Containproblems> containproblemsList = new ArrayList<>();
     private DatabaseReference mathDatabase;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_problem);
+        mathDatabase = FirebaseDatabase.getInstance().getReference("Word Problem");
 
-        mathDatabase = FirebaseDatabase.getInstance().getReference();
+//        mathDatabase = FirebaseDatabase.getInstance().getReference("Problems");
 
         problem = (RecyclerView) findViewById(R.id.problem_text_view);
+        problem.setHasFixedSize(true);
         problem.setLayoutManager(new LinearLayoutManager(this));
+        problemAdapter = new ProblemAdapter(mathDatabase);
+
         problem.setAdapter(problemAdapter);
-        mathDatabase.addValueEventListener(new ValueEventListener() {
 
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                Map<String, Object> problemMap = (HashMap<String, Object>) dataSnapshot.getValue();
-
-                Map<String, Object> map = (Map<String, Object>) problemMap.get("Problem");
-                for (Map.Entry<String, Object> entry1 : map.entrySet()) {
-
-                    if (entry1 == null) continue;
-                    HashMap<String, Object> map2 = (HashMap<String, Object>) entry1.getValue();
-                    int i = 0;
-                    Containproblems containproblems = new Containproblems();
-
-                    for (Map.Entry<String, Object> entry2 : map2.entrySet()) {
-                        if (i == 0) {
-                            containproblems.setAnswer((long) entry2.getValue());
-                            i++;
-                        } else if (i == 1) {
-                            containproblems.setCorrect((boolean) entry2.getValue());
-                            i++;
-                        } else {
-                            containproblems.setProblem((String) entry2.getValue());
-                            containproblemsList.add(containproblems);
-                        }
-                    }
-                }
-                problemAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
     }
+    @Override
+        public void onDestroy(){
+            super.onDestroy();
+            problemAdapter.cleanup();
+        }
+//        mathDatabase.addValueEventListener(new ValueEventListener() {
+
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//
+//                Map<String, Object> problemMap = (HashMap<String, Object>) dataSnapshot.getValue();
+//
+////                Map<String, Object> map = (Map<String, Object>) problemMap.get("Problem");
+//                for (Map.Entry<String, Object> entry1 : problemMap.entrySet()) {
+//
+//                    if (entry1 == null) continue;
+//                    HashMap<String, Object> map2 = (HashMap<String, Object>) entry1.getValue();
+//                    int i = 0;
+//                    Containproblems containproblems = new Containproblems();
+//
+//                    for (Map.Entry<String, Object> entry2 : map2.entrySet()) {
+//                        if (i == 0) {
+//                            containproblems.setAnswer((long) entry2.getValue());
+//                            i++;
+//                        } else if (i == 1) {
+//                            containproblems.setCorrect((boolean) entry2.getValue());
+//                            i++;
+//                        } else {
+//                            containproblems.setProblem((String) entry2.getValue());
+//                            containproblemsList.add(containproblems);
+//                        }
+//                    }
+//                }
+////                problemAdapter.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+
     @Override
     public boolean onCreateOptionsMenu (Menu menu)
     {

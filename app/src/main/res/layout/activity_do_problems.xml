@@ -48,5 +48,4 @@
         android:layout_gravity="center"
         android:onClick="openScoreBoard" />
 
-
 </LinearLayout>

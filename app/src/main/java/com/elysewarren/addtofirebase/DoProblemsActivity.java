@@ -3,6 +3,8 @@ package com.elysewarren.addtofirebase;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +18,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 
@@ -24,11 +29,11 @@ public class DoProblemsActivity extends AppCompatActivity {
     private DatabaseReference wpProblems = database.getReference("Problems");
     private ArrayList<Containproblems> mathProblemsArrayList = new ArrayList<>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_do_problems);
-
 
     }
 
@@ -37,6 +42,9 @@ public class DoProblemsActivity extends AppCompatActivity {
         Containproblems p = new Containproblems();
         mathProblemsArrayList.add(p);
         wpProblems.child(id).setValue(p);
+
+        Intent intent = new Intent(this, ViewProblem.class);
+        startActivity(intent);
     }
 
     public void removeProblem(View view) {
